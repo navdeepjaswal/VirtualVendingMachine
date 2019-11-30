@@ -2,18 +2,18 @@ package vendingmachine;
 
 public class GUI extends javax.swing.JFrame {
 
-    private static double bill = 0; // total cost
+    private static double bill = 0; // bill accounts the total cost
     public static int itemCount = 0; //counting number of items selected
-    public static int rxCount, jerkyCount, kitkatCount, snickersCount, laysCount, wheyCount, gummiesCount, cookiesCount, takisCount;
-    public static String totalText="0";
+    public static int rxCount, jerkyCount, kitkatCount, snickersCount, laysCount, wheyCount, gummiesCount, cookiesCount, takisCount; // item counter
+    public static String totalText= "0"; 
     //counting items specifically
 
-    public GUI() {
+    public GUI() { //constructer GUI
 
         initComponents();
         setVisible(true);
 
-        snickers.setToolTipText("Add Snickers"); //hover actions
+        snickers.setToolTipText("Add Snickers"); //hover actions for cursor
         jerky.setToolTipText("Add Jack Links Beef Jerky");
         whey.setToolTipText("Add Gatorade Protein Bar");
         rxbar.setToolTipText("Add RXBAR");
@@ -22,11 +22,15 @@ public class GUI extends javax.swing.JFrame {
         kitkat.setToolTipText("Add Kitkat");
         gummies.setToolTipText("Add Haribo Goldbear Gummies");
         takis.setToolTipText("Add Takis");
+        
+        if (totalText.equals("0")){
+           checkOut.setEnabled(false);       
+       }
 
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -279,9 +283,9 @@ public class GUI extends javax.swing.JFrame {
                                     .addComponent(rxbar, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jerky, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(whey, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(takis, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(takis, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jerky, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(128, 128, 128)
@@ -309,9 +313,9 @@ public class GUI extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jerky, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(snickers, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
-                            .addComponent(rxbar, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                            .addComponent(rxbar, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(jerky, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel11)
@@ -385,10 +389,10 @@ public class GUI extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
 // making action listeners here
-    private void rxbarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rxbarActionPerformed
+    private void rxbarActionPerformed(java.awt.event.ActionEvent evt) {                                      
         bill = bill + 2.50;
         String dollars = Double.toString(bill);
         total.setText(dollars);
@@ -396,9 +400,10 @@ public class GUI extends javax.swing.JFrame {
         rxCount++; // icreasing item count by 1
 
         totalText = total.getText();
-    }//GEN-LAST:event_rxbarActionPerformed
+        checkOut.setEnabled(true);
+    }                                     
 
-    private void jerkyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jerkyActionPerformed
+    private void jerkyActionPerformed(java.awt.event.ActionEvent evt) {                                      
         bill = bill + 1.75;
         String dollars = Double.toString(bill);
         total.setText(dollars);
@@ -406,9 +411,10 @@ public class GUI extends javax.swing.JFrame {
         jerkyCount++;// icreasing item count by 1
 
         totalText = total.getText();
-    }//GEN-LAST:event_jerkyActionPerformed
+        checkOut.setEnabled(true);
+    }                                     
 
-    private void kitkatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kitkatActionPerformed
+    private void kitkatActionPerformed(java.awt.event.ActionEvent evt) {                                       
         bill = bill + 1.50;
         String dollars = Double.toString(bill);
         total.setText(dollars);
@@ -416,9 +422,10 @@ public class GUI extends javax.swing.JFrame {
         kitkatCount++;// icreasing item count by 1
 
         totalText = total.getText();
-    }//GEN-LAST:event_kitkatActionPerformed
+        checkOut.setEnabled(true);
+    }                                      
 
-    private void snickersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_snickersActionPerformed
+    private void snickersActionPerformed(java.awt.event.ActionEvent evt) {                                         
         bill = bill + 1.75;
         String dollars = Double.toString(bill);
         total.setText(dollars);
@@ -426,9 +433,10 @@ public class GUI extends javax.swing.JFrame {
         snickersCount++;// icreasing item count by 1
 
         totalText = total.getText();
-    }//GEN-LAST:event_snickersActionPerformed
+        checkOut.setEnabled(true);
+    }                                        
 
-    private void laysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_laysActionPerformed
+    private void laysActionPerformed(java.awt.event.ActionEvent evt) {                                     
         bill = bill + 1.50;
         String dollars = Double.toString(bill);
         total.setText(dollars);
@@ -436,9 +444,10 @@ public class GUI extends javax.swing.JFrame {
         laysCount++;// icreasing item count by 1
 
         totalText = total.getText();
-    }//GEN-LAST:event_laysActionPerformed
+        checkOut.setEnabled(true);
+    }                                    
 
-    private void wheyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wheyActionPerformed
+    private void wheyActionPerformed(java.awt.event.ActionEvent evt) {                                     
         bill = bill + 3.50;
         String dollars = Double.toString(bill);
         total.setText(dollars);
@@ -446,9 +455,10 @@ public class GUI extends javax.swing.JFrame {
         wheyCount++;// icreasing item count by 1
 
         totalText = total.getText();
-    }//GEN-LAST:event_wheyActionPerformed
+        checkOut.setEnabled(true);
+    }                                    
 
-    private void gummiesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gummiesActionPerformed
+    private void gummiesActionPerformed(java.awt.event.ActionEvent evt) {                                        
         bill = bill + 2.00;
         String dollars = Double.toString(bill);
         total.setText(dollars);
@@ -456,9 +466,10 @@ public class GUI extends javax.swing.JFrame {
         gummiesCount++;// icreasing item count by 1
 
         totalText = total.getText();
-    }//GEN-LAST:event_gummiesActionPerformed
+        checkOut.setEnabled(true);
+    }                                       
 
-    private void cookiesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cookiesActionPerformed
+    private void cookiesActionPerformed(java.awt.event.ActionEvent evt) {                                        
         bill = bill + 1.70;
         String dollars = Double.toString(bill);
         total.setText(dollars);
@@ -466,10 +477,11 @@ public class GUI extends javax.swing.JFrame {
         cookiesCount++;// icreasing item count by 1
 
         totalText = total.getText();
-    }//GEN-LAST:event_cookiesActionPerformed
+        checkOut.setEnabled(true);
+    }                                       
 
 
-    private void takisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_takisActionPerformed
+    private void takisActionPerformed(java.awt.event.ActionEvent evt) {                                      
         bill = bill + 2.00;
         String dollars = Double.toString(bill);
         total.setText(dollars);
@@ -477,14 +489,15 @@ public class GUI extends javax.swing.JFrame {
         takisCount++;// icreasing item count by 1
 
         totalText = total.getText();
-    }//GEN-LAST:event_takisActionPerformed
+        checkOut.setEnabled(true);
+    }                                     
     
 //whenever "check out" button will be clicked, an action listener will activate
     //that allows another Jframe to open (i.e. checkOut window).
     
-    private void checkOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkOutActionPerformed
-        new checkOut(); //constructor of checkOut class is called
-    }//GEN-LAST:event_checkOutActionPerformed
+    private void checkOutActionPerformed(java.awt.event.ActionEvent evt) {                                         
+       new checkOut(); //constructor of checkOut class is called
+    }                                        
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -521,7 +534,7 @@ public class GUI extends javax.swing.JFrame {
     }
 
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JButton checkOut;
     private javax.swing.JButton cookies;
     private javax.swing.JButton gummies;
@@ -549,5 +562,5 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton takis;
     private javax.swing.JLabel total;
     private javax.swing.JButton whey;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 }
