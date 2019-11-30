@@ -1,4 +1,4 @@
-# VirtualVendingMachine 
+# Virtual Vending Machine 
 
 A Virtual Vending Machine made using Java Swing. The gif below shows the output.  
 
