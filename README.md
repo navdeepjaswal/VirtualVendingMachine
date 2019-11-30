@@ -1,6 +1,6 @@
 # Virtual Vending Machine 
 
-A Virtual Vending Machine made using Java Swing. The gif below shows the output.  
+A Virtual Vending Machine designed using Java Swing. The gif below shows the output.  
 
 ![](Output.gif)  
 
