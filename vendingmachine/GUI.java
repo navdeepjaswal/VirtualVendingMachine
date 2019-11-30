@@ -5,7 +5,7 @@ public class GUI extends javax.swing.JFrame {
     private static double bill = 0; // total cost
     public static int itemCount = 0; //counting number of items selected
     public static int rxCount, jerkyCount, kitkatCount, snickersCount, laysCount, wheyCount, gummiesCount, cookiesCount, takisCount;
-    public static String totalText;
+    public static String totalText="0";
     //counting items specifically
 
     public GUI() {
