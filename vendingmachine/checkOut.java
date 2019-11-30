@@ -2,7 +2,7 @@ package vendingmachine;
 
 public class checkOut extends javax.swing.JFrame {
              
-    public checkOut() {
+    public checkOut() {//constructer checkOut
         initComponents();
         setVisible(true);
         //prompting the times each item was chosen 
@@ -21,10 +21,12 @@ public class checkOut extends javax.swing.JFrame {
                
     }
     
+    //code below was automatically generated when designing Jframe
+    
     
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
@@ -135,7 +137,7 @@ public class checkOut extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
     public static void main(String args[]) {
         
@@ -167,7 +169,7 @@ public class checkOut extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
@@ -176,5 +178,5 @@ public class checkOut extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea orderList;
     private javax.swing.JLabel total;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 }
